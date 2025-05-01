@@ -4,7 +4,7 @@ CARD_TITLES = {
 }
 
 DOCUMENT_NUMBER_MESSAGES = {
-  "Empty field" => "número documento es obligatorio.",
+  "Empty field" => "El campo número documento es obligatorio.",
   "Invalid Alphabetic" => 'Formato inválido de "Número de documento". (Invalid Alphabetic)',
   "Invalid special characters" => 'Formato inválido de "Número de documento". (Invalid special characters)',  
   "Space characters" => 'Formato inválido de "Número de documento". (Space characters)',

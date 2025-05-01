@@ -37,6 +37,7 @@ end
 
 Then("The information card should be displayed") do
     begin
+    log "Checking if the info card is displayed"
       expect(@current_page.is_info_card_displayed?).to eq(true), "Expected info card to be displayed"
       expect(@current_page.is_form_hidden?).to eq(true), "Expected form to be sent"
     rescue RSpec::Expectations::ExpectationNotMetError => e
