@@ -10,7 +10,7 @@ Feature: Validate the Quick Registration using all the form fields
   @onlyThis
   Scenario Outline: INW-1 - Quick Registration with valid data in all the fields
     Given I am on the 'Quick Registration' page
-    When I fill in the 'Quick Registration' form with the following values
+    When I fill the 'Quick Registration' form with the following values
       | Document Number   | <DocumentNumber>  |
       | Cellphone         | <Cellphone>       |
       | Names             | <Names>           |
@@ -29,14 +29,15 @@ Feature: Validate the Quick Registration using all the form fields
 
     Examples:
       | DocumentNumber | Cellphone     | Names     | FirstSurname   | SecondSurname  | Email                     | Password   | RepeatPassword |
-      | AA484831       | 71000006      | NOMBREI   | PRIAPELLIDOI   | SEGAPELLIDOI   | 71000006test@gmail.com    | Aaaaaaaaa1 | Aaaaaaaaa1     |
+      | 66000001       | 66000001      | NOMBREI   | PRIAPELLIDOI   | SEGAPELLIDOI   | 66000001test@gmail.com    | Aaaaaaaaa1 | Aaaaaaaaa1     |
+
 
 
 
   @onlyThis
   Scenario Outline: INW-2 - Quick Registration without checking the terms and conditions
     Given I am on the 'Quick Registration' page
-    When I fill in the 'Quick Registration' form with the following values
+    When I fill the 'Quick Registration' form with the following values
       | Document Number   | <DocumentNumber>  |
       | Cellphone         | <Cellphone>       |
       | Names             | <Names>           |
@@ -85,7 +86,7 @@ Feature: Validate the Quick Registration using all the form fields
   @onlyThis
   Scenario Outline: INW-5 - Quick Registration filling only the optional fields
     Given I am on the 'Quick Registration' page
-    When I fill in the 'Quick Registration' form with the following values
+    When I fill the 'Quick Registration' form with the following values
       | Document Number   | <DocumentNumber>  |
       | Cellphone         | <Cellphone>       |
       | Names             | <Names>           |
@@ -101,7 +102,7 @@ Feature: Validate the Quick Registration using all the form fields
     And The quick registration attempt should fail
     And I accept the failed registration message
     And The user should still on the 'Quick Registration' page
-    And The following fields should display the empty field error message
+    And The following fields should display the "Empty field" error message
       | Document Number |
       | Names           |
       | First Surname   |
@@ -119,7 +120,7 @@ Feature: Validate the Quick Registration using all the form fields
   @onlyThis 
   Scenario Outline: INW-6 - Quick Registration filling only the mandatory fields
     Given I am on the 'Quick Registration' page
-    When I fill in the 'Quick Registration' form with the following values
+    When I fill the 'Quick Registration' form with the following values
       | Document Number   | <DocumentNumber>  |
       | Cellphone         | <Cellphone>       |
       | Names             | <Names>           |

@@ -12,9 +12,9 @@ class QuickRegistrationCard
 
   def is_card_displayed?
     @card = @browser.div(css: 'body > div.swal2-container.swal2-center.swal2-backdrop-show')
-    return false unless @card.exists?
+    #return false unless @card.exists?
 
-    @card.wait_until(timeout: 0.3, &:present?)  # espera mínima
+    @card.wait_until(timeout: 1, &:present?)  # espera mínima
     true
   rescue Watir::Wait::TimeoutError
     false

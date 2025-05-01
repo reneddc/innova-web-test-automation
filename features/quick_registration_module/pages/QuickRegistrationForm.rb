@@ -28,6 +28,7 @@ class QuickRegistrationForm
     values = values.to_h.transform_values do |value|
       clean_quotes(value)
     end
+
     @document_number.set(values['Document Number'])
     @names.set(values['Names'])
     @first_surname.set(values['First Surname'])

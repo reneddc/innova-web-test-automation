@@ -19,7 +19,7 @@ Given("I am on the 'Quick Registration' page") do
     expect(@current_page.is_register_button_enabled?).to eq(false), "Register button expected to be disabled at the begin, but wasn't"
 end
 
-When("I fill in the 'Quick Registration' form with the following values") do |table|
+When(/I (?:fill|replace) the 'Quick Registration' form with the following values/) do |table|
     @current_page.fill_form(table.rows_hash)
 end
   
@@ -43,6 +43,7 @@ Then("The information card should be displayed") do
       if @current_page.get_field_message_for("Email").include?("ya existe") || @current_page.get_field_message_for("Document Number").include?("ya se encuentra registrado")
         @current_page.add_new_user_to_excel
       end
+
       log @current_page.get_field_message_for("Document Number")
       log @current_page.get_field_message_for("Names")
       log @current_page.get_field_message_for("First Surname")
@@ -77,7 +78,15 @@ And("The 'Register' button is disabled") do
 end
 
 Then("The information card should not be displayed") do
-    expect(@current_page.is_info_card_displayed?).to eq(false), "Information card expected to be hidden, but it´s displayed"
+    begin
+        expect(@current_page.is_info_card_displayed?).to eq(false), "Information card expected to be hidden, but it´s displayed"
+    rescue RSpec::Expectations::ExpectationNotMetError => e
+        if @current_page.get_info_card_title.include?("Ciudadano registrado")
+            log "User registred succesfuly when it shouldn't be"
+            @current_page.add_new_user_to_excel
+        end
+        raise e.message
+    end
 end
 
 Then("The form should not be sent") do
@@ -87,6 +96,9 @@ end
 Then("The user should still on the 'Quick Registration' page") do
     expect(@current_page).to be_a(QuickRegistrationPage), "Current page expected to be a QuickRegistrationPage, but wasn't"
     expect(@current_page.on_quick_registration_page?).to eq(true), "Expected to be on Quick Rgistration page, but wasn't"
+    if @current_page.get_field_message_for("Email").include?("ya existe") || @current_page.get_field_message_for("Document Number").include?("ya se encuentra registrado")
+        @current_page.add_new_user_to_excel
+    end
 end
 
 Then("The quick registration attempt should fail") do
@@ -103,12 +115,34 @@ Then("I accept the failed registration message") do
 end
 
 
-And(/^The following fields should display the empty field error message$/) do |table|
-    table.hashes.each do |row|
-      field = row.keys.first
-      expected_message = FIELDS_MESSAGES[field][:empty]
+And(/^The following fields should display the "(.*)" error message$/) do |error_type,table|
+    table.raw.flatten.each do |field|
+        expected_message = FIELDS_MESSAGES[field][error_type]
+      expected_message = FIELDS_MESSAGES[field][error_type]
       current_message = @current_page.get_field_message_for(field)
       expect(current_message).to eq(expected_message),
                                  "Expected field message for #{field}: #{expected_message}. But got: '#{current_message}'"
     end
 end
+
+
+And(/^The following fields should contain the "(.*)" error message$/) do |error_type, table|
+    table.raw.flatten.each do |field|
+      expected_message = FIELDS_MESSAGES[field][error_type]
+      current_message = @current_page.get_field_message_for(field)
+      expect(current_message).to(include(expected_message), 
+                                "Expected field message for #{field} contains: #{expected_message}. But got: '#{current_message}'")                   
+    end
+end
+
+
+And(/^The field "(.*)" should contain the following error messages$/) do |field, table|
+    table.raw.flatten.each do |error_type|
+      expected_message = FIELDS_MESSAGES[field][error_type]
+      current_message = @current_page.get_field_message_for(field)
+      expect(current_message).to(include(expected_message), 
+                                "Expected field message for #{field} contains: #{expected_message}. But got: '#{current_message}'")                   
+    end
+end
+
+

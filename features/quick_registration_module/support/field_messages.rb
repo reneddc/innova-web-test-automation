@@ -4,35 +4,41 @@ CARD_TITLES = {
 }
 
 DOCUMENT_NUMBER_MESSAGES = {
-  empty: "número documento es obligatorio."
+  "Empty field" => "número documento es obligatorio.",
+  "Invalid Alphabetic" => 'Formato inválido de "Número de documento". (Invalid Alphabetic)',
+  "Invalid special characters" => 'Formato inválido de "Número de documento". (Invalid special characters)',  
+  "Space characters" => 'Formato inválido de "Número de documento". (Space characters)',
+  "Insufficient characters" => 'El campo número documento debe contener al menos 4 caracteres.',
+  "Too many characters" => 'número documento no debe ser mayor que 15 caracteres.',
+  "Already registered" => 'El número documento ya se encuentra registrado.',
 }
 
 NAMES_MESSAGES = {
-  empty: "nombres es obligatorio.",
+  "Empty field" => "nombres es obligatorio.",
 }
 
 FIRST_SURNAME_MESSAGES = {
-  empty: "El campo 'Nombres' es obligatorio.",
+  "Empty field" => "El campo 'Nombres' es obligatorio.",
 }
 
 SECOND_SURNAME_MESSAGES = {
-  empty: "",
+  "Empty field" => "",
 }
 
 CELLPHONE_MESSAGES = {
-  empty: "celular es obligatorio.",
+  "Empty field" => "celular es obligatorio.",
 }
 
 EMAIL_MESSAGES = {
-  empty: "El campo 'Correo Electrónico' es obligatorio.",
+  "Empty field" => "El campo 'Correo Electrónico' es obligatorio.",
 }
 
 PASSWORD_MESSAGES = {
-  empty: "contraseña es obligatorio.",
+  "Empty field" => "contraseña es obligatorio.",
 }
 
 REPEAT_PASSWORD_MESSAGES = {
-  empty: "repetir contraseña es obligatorio.",
+  "Empty field" => "repetir contraseña es obligatorio.",
 }
 
 

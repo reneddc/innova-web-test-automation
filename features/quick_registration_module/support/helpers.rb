@@ -2,10 +2,11 @@ module Helpers
   def clean_quotes(string)
     return "" if string.nil?
 
-    if string.start_with?('"') && string.end_with?('"') && string.length >= 2
-      return string[1..-2]
+    cleaned = if string.start_with?('"') && string.end_with?('"') && string.length >= 2
+      string[1..-2]
     else
-      return string
+      string
     end
+    cleaned.gsub("·", " ")
   end
 end
