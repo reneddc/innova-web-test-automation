@@ -179,6 +179,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   cucumber
+  cucumber-html-formatter
   fiddle
   page-object
   robocop

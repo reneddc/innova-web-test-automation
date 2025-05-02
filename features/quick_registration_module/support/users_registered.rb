@@ -32,7 +32,7 @@ class UserRegistered
     end
   
     if exists
-      puts "El usuario ya existe (documento, correo o celular duplicado). No se registrará."
+      # puts "El usuario ya existe (documento, correo o celular duplicado). No se registrará."
       return
     end
   
@@ -49,7 +49,7 @@ class UserRegistered
     end
     workbook.close
   
-    puts "Usuario registrado exitosamente."
+    #puts "Usuario registrado exitosamente."
   end
 end
 
