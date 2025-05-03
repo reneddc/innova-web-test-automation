@@ -1092,6 +1092,474 @@ Scenario Outline: INW-140 - Quick registration with a "Cellphone" credential tha
 
 
 
+Scenario Outline: INW-141 - Quick registration with a "Cellphone" credential that contains invalid special characters, doesn't start with 6 or 7, and insufficient characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Invalid Special Characters          |
+    | Start with 6 or 7                   |
+    | Insufficient Characters             |
+
+  Examples:
+    | DocumentNumber | Cellphone  | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000366       | *66:3#.    | NOMCCCLXVI   | PRIAPCCCLXVI    | SEGAPCCCLXVI     | 66000366test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+
+Scenario Outline: INW-142 - Quick registration with a "Cellphone" credential that contains invalid special characters, doesn't start with 6 or 7, and too many characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Invalid Special Characters          |
+    | Start with 6 or 7                   |
+    | Too Many Characters                 |
+
+  Examples:
+    | DocumentNumber | Cellphone            | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000367       | *66:3#._,-@       | NOMCCCLXVII  | PRIAPCCCLXVII   | SEGAPCCCLXVII    | 66000367test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+
+Scenario Outline: INW-143 - Quick registration with a "Cellphone" credential that contains space characters, doesn't start with 6 or 7, and insufficient characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Space Characters                    |
+    | Start with 6 or 7                   |
+    | Insufficient Characters             |
+
+  Examples:
+    | DocumentNumber | Cellphone  | Names         | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000368       | 5·3·6·8    | NOMCCCLXVIII | PRIAPCCCLXVIII  | SEGAPCCCLXVIII   | 66000368test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+
+Scenario Outline: INW-144 - Quick registration with a "Cellphone" credential that contains space characters, doesn't start with 6 or 7, and too many characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Space Characters                    |
+    | Start with 6 or 7                   |
+    | Too Many Characters                 |
+
+  Examples:
+    | DocumentNumber | Cellphone          | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000369       | 66··00··00·369     | NOMCCCLXIX   | PRIAPCCCLXIX    | SEGAPCCCLXIX     | 66000369test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+
+Scenario Outline: INW-145 - Quick registration with a "Cellphone" credential that contains alphabetic characters, invalid special characters, space characters, and doesn't start with 6 or 7
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Alphabetic Characters               |
+    | Invalid Special Characters          |
+    | Space Characters                    |
+    | Start with 6 or 7                   |
+
+  Examples:
+    | DocumentNumber | Cellphone  | Names         | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000370       | 5A·:B·@*   | NOMCCCLXX     | PRIAPCCCLXX     | SEGAPCCCLXX      | 66000370test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+Scenario Outline: INW-146 - Quick registration with a "Cellphone" credential that contains alphabetic characters, invalid special characters, space characters, and insufficient characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Alphabetic Characters               |
+    | Invalid Special Characters          |
+    | Space Characters                    |
+    | Insufficient Characters             |
+
+  Examples:
+    | DocumentNumber | Cellphone  | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000371       | 6A*·A@     | NOMCCCLXXI   | PRIAPCCCLXXI    | SEGAPCCCLXXI     | 66000371test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+
+Scenario Outline: INW-147 - Quick registration with a "Cellphone" credential that contains alphabetic characters, invalid special characters, space characters, and too many characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Alphabetic Characters               |
+    | Invalid Special Characters          |
+    | Space Characters                    |
+    | Too Many Characters                 |
+
+  Examples:
+    | DocumentNumber | Cellphone        | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000372       | 6A*·A@·B#·.;·A_  | NOMCCCLXXII  | PRIAPCCCLXXII   | SEGAPCCCLXXII    | 66000372test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+Scenario Outline: INW-148 - Quick registration with a "Cellphone" credential that contains alphabetic characters, invalid special characters, a number not starting with 6 or 7, and insufficient characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Alphabetic Characters               |
+    | Invalid Special Characters          |
+    | Start with 6 or 7                   |
+    | Insufficient Characters             |
+
+  Examples:
+    | DocumentNumber | Cellphone  | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000373       | 5A:B*      | NOMCCCLXXIII | PRIAPCCCLXXIII  | SEGAPCCCLXXIII   | 66000373test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+
+Scenario Outline: INW-149 - Quick registration with a "Cellphone" credential that contains alphabetic characters, invalid special characters, a number not starting with 6 or 7, and too many characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Alphabetic Characters               |
+    | Invalid Special Characters          |
+    | Start with 6 or 7                   |
+    | Too Many Characters                 |
+
+  Examples:
+    | DocumentNumber | Cellphone        | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000374       | 5A:B*C/#@$%      | NOMCCCLXXIV  | PRIAPCCCLXXIV   | SEGAPCCCLXXIV    | 66000374test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+
+Scenario Outline: INW-150 - Quick registration with a "Cellphone" credential that contains alphabetic characters, space characters, a number not starting with 6 or 7, and insufficient characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Alphabetic Characters               |
+    | Space Characters                    |
+    | Start with 6 or 7                   |
+    | Insufficient Characters             |
+
+  Examples:
+    | DocumentNumber | Cellphone  | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000375       | 5·A·A·5    | NOMCCCLXXV   | PRIAPCCCLXXV    | SEGAPCCCLXXV     | 66000375test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+Scenario Outline: INW-151 - Quick registration with a "Cellphone" credential that contains alphabetic characters, space characters, a number not starting with 6 or 7, and too many characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Alphabetic Characters               |
+    | Space Characters                    |
+    | Start with 6 or 7                   |
+    | Too Many Characters                 |
+
+  Examples:
+    | DocumentNumber | Cellphone                | Names         | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000376       | 5·A·A·A·A·A·A·A·A·A·A·6  | NOMCCCLXXVI   | PRIAPCCCLXXVI   | SEGAPCCCLXXVI    | 66000376test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+
+Scenario Outline: INW-152 - Quick registration with a "Cellphone" credential that contains invalid special characters, space characters, a number not starting with 6 or 7, and insufficient characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Invalid Special Characters          |
+    | Space Characters                    |
+    | Start with 6 or 7                   |
+    | Insufficient Characters             |
+
+  Examples:
+    | DocumentNumber | Cellphone  | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000377       | 5·*·$·7    | NOMCCCLXXVII | PRIAPCCCLXXVII  | SEGAPCCCLXXVII   | 66000377test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+Scenario Outline: INW-153 - Quick registration with a "Cellphone" credential that contains invalid special characters, space characters, a number not starting with 6 or 7, and too many characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Invalid Special Characters          |
+    | Space Characters                    |
+    | Start with 6 or 7                   |
+    | Too Many Characters                 |
+
+  Examples:
+    | DocumentNumber | Cellphone                | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000378       | 5·*·$·_·:·;·,·#·%·>·<7   | NOMCCCLXXVIII| PRIAPCCCLXXVIII | SEGAPCCCLXXVIII  | 66000378test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+
+
+Scenario Outline: INW-154 - Quick registration with a "Cellphone" credential that contains alphabetic characters, invalid special characters, space characters, a number not starting with 6 or 7, and insufficient characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Alphabetic Characters               |
+    | Invalid Special Characters          |
+    | Space Characters                    |
+    | Start with 6 or 7                   |
+    | Insufficient Characters             |
+
+  Examples:
+    | DocumentNumber | Cellphone  | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000379       | 5·A·*/     | NOMCCCLXXIX  | PRIAPCCCLXXIX   | SEGAPCCCLXXIX    | 66000379test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+Scenario Outline: INW-155 - Quick registration with a "Cellphone" credential that contains alphabetic characters, invalid special characters, space characters, a number not starting with 6 or 7, and too many characters
+  Given I am on the 'Quick Registration' page
+  When I fill the 'Quick Registration' form with the following values
+    | Document Number   | <DocumentNumber>  |
+    | Cellphone         | <Cellphone>       |
+    | Names             | <Names>           |
+    | First Surname     | <FirstSurname>    |
+    | Second Surname    | <SecondSurname>   |
+    | Email             | <Email>           |
+    | Password          | <Password>        |
+    | Repeat Password   | <RepeatPassword>  |
+  And I check the "Terms and Conditions" checkbox
+  And The 'Register' button turns to enabled
+  And I click the 'Register' button
+  Then The information card should not be displayed
+  And The quick registration attempt should fail
+  And The user should still on the 'Quick Registration' page
+  And The field "Cellphone" should contain the following error messages
+    | Alphabetic Characters               |
+    | Invalid Special Characters          |
+    | Space Characters                    |
+    | Start with 6 or 7                   |
+    | Too Many Characters                 |
+
+  Examples:
+    | DocumentNumber | Cellphone                | Names       | FirstSurname   | SecondSurname   | Email                   | Password    | RepeatPassword |
+    | 66000380       | 6·A·*/···AA·-#··%$·5     | NOMCCCLXXX   | PRIAPCCCLXXX    | SEGAPCCCLXXX     | 66000380test@gmail.com  | Aaaaaaaaa1  | Aaaaaaaaa1     |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
