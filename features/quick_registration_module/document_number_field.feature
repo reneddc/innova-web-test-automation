@@ -24,7 +24,7 @@ Feature: Validate the Quick registration focused on "Document Number" field
     Then The information card should not be displayed
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
-    And The following fields should display the "Empty field" error message
+    And The following fields should display the "Empty Field" error message
       | Document Number |
 
     Examples:
@@ -83,7 +83,7 @@ Scenario Outline: INW-14 - Quick registration with invalid alphabetic characters
     Then The information card should not be displayed
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
-    And The following fields should contain the "Invalid Alphabetic" error message
+    And The following fields should contain the "Invalid Alphabetic Characters" error message
         | Document Number |
 
     Examples:
@@ -144,7 +144,7 @@ Scenario Outline: INW-16 - Quick registration with invalid special characters in
     Then The information card should not be displayed
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
-    And The following fields should contain the "Invalid special characters" error message
+    And The following fields should contain the "Invalid Special Characters" error message
         | Document Number |
 
     Examples:
@@ -177,7 +177,7 @@ Scenario Outline: INW-17 - Quick registration with space characters in "Document
     Then The information card should not be displayed
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
-    And The following fields should contain the "Space characters" error message
+    And The following fields should contain the "Space Characters" error message
         | Document Number |
 
     Examples:
@@ -212,7 +212,7 @@ Scenario Outline: INW-18 - Quick registration with insufficient characters in "D
     Then The information card should not be displayed
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
-    And The following fields should contain the "Insufficient characters" error message
+    And The following fields should contain the "Insufficient Characters" error message
         | Document Number |
 
     Examples:
@@ -238,7 +238,7 @@ Scenario Outline: INW-19 - Quick registration with too many characters in "Docum
     Then The information card should not be displayed
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
-    And The following fields should contain the "Too many characters" error message
+    And The following fields should contain the "Too Many Characters" error message
         | Document Number |
 
     Examples:
@@ -274,7 +274,7 @@ Scenario Outline: INW-20 - Quick registration with edge characters in "Document 
 
 
 #@onlyThis
-Scenario Outline: INW-21 - Quick registration changing invalid "Document Number" to valid one
+Scenario Outline: INW-21 - Quick registration changing invalid "Document Number" to a valid one
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
       | Document Number   | <DocumentNumber>  |
@@ -350,7 +350,7 @@ Scenario Outline: INW-22 - Quick registration entering a previously registered "
     Then The information card should not be displayed
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
-    And The following fields should contain the "Already registered" error message
+    And The following fields should display the "Already Registered" error message
         | Document Number |
 
     Examples:
@@ -379,8 +379,8 @@ Scenario Outline: INW-97 - Quick registration with invalid alphabetic and specia
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid Alphabetic          |
-        | Invalid special characters  |
+        | Invalid Alphabetic Characters          |
+        | Invalid Special Characters  |
 
     Examples:
       | DocumentNumber   | Cellphone     | Names        | FirstSurname      | SecondSurname      | Email                     | Password   | RepeatPassword |
@@ -408,8 +408,8 @@ Scenario Outline: INW-98 - Quick registration with invalid alphabetic and space 
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid Alphabetic          |
-        | Space characters  |
+        | Invalid Alphabetic Characters          |
+        | Space Characters  |
 
     Examples:
       | DocumentNumber   | Cellphone     | Names        | FirstSurname       | SecondSurname       | Email                     | Password   | RepeatPassword |
@@ -437,8 +437,8 @@ Scenario Outline: INW-99 - Quick registration with invalid alphabetic and insuff
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid Alphabetic          |
-        | Insufficient characters  |
+        | Invalid Alphabetic Characters          |
+        | Insufficient Characters  |
 
     Examples:
       | DocumentNumber   | Cellphone     | Names        | FirstSurname      | SecondSurname      | Email                     | Password   | RepeatPassword |
@@ -464,8 +464,8 @@ Scenario Outline: INW-100 - Quick registration with invalid alphabetic and too m
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid Alphabetic          |
-        | Too many characters  |
+        | Invalid Alphabetic Characters          |
+        | Too Many Characters  |
 
     Examples:
       | DocumentNumber        | Cellphone     | Names       | FirstSurname      | SecondSurname      | Email                     | Password   | RepeatPassword |
@@ -491,8 +491,8 @@ Scenario Outline: INW-101 - Quick registration with invalid special characters a
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid special characters          |
-        | Space characters                    |
+        | Invalid Special Characters          |
+        | Space Characters                    |
 
     Examples:
       | DocumentNumber   | Cellphone     | Names        | FirstSurname       | SecondSurname       | Email                     | Password   | RepeatPassword |
@@ -518,8 +518,8 @@ Scenario Outline: INW-102 - Quick registration with invalid special characters a
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid special characters          |
-        | Insufficient characters                   |
+        | Invalid Special Characters          |
+        | Insufficient Characters                   |
 
     Examples:
       | DocumentNumber   | Cellphone     | Names         | FirstSurname        | SecondSurname        | Email                     | Password   | RepeatPassword |
@@ -547,8 +547,8 @@ Scenario Outline: INW-103 - Quick registration with invalid special characters a
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid special characters          |
-        | Too many characters                  |
+        | Invalid Special Characters          |
+        | Too Many Characters                  |
 
     Examples:
       | DocumentNumber          | Cellphone     | Names         | FirstSurname        | SecondSurname        | Email                     | Password   | RepeatPassword |
@@ -575,8 +575,8 @@ Scenario Outline: INW-104 - Quick registration with invalid space characters and
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Space characters          |
-        | Insufficient characters   |
+        | Space Characters          |
+        | Insufficient Characters   |
 
     Examples:
       | DocumentNumber   | Cellphone     | Names         | FirstSurname        | SecondSurname        | Email                     | Password   | RepeatPassword |
@@ -602,8 +602,8 @@ Scenario Outline: INW-105 - Quick registration with invalid space characters and
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Space characters          |
-        | Too many characters                  |
+        | Space Characters          |
+        | Too Many Characters                  |
 
     Examples:
       | DocumentNumber                       | Cellphone     | Names       | FirstSurname    | SecondSurname    | Email                     | Password   | RepeatPassword |
@@ -630,9 +630,9 @@ Scenario Outline: INW-106 - Quick registration with invalid alphabetic, special 
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid Alphabetic          |
-        | Invalid special characters  |
-        | Space characters          |
+        | Invalid Alphabetic Characters          |
+        | Invalid Special Characters  |
+        | Space Characters          |
 
     Examples:
       | DocumentNumber   | Cellphone     | Names         | FirstSurname        | SecondSurname        | Email                     | Password   | RepeatPassword |
@@ -659,9 +659,9 @@ Scenario Outline: INW-107 - Quick registration with invalid alphabetic, special 
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid Alphabetic          |
-        | Invalid special characters  |
-        | Insufficient characters   |
+        | Invalid Alphabetic Characters          |
+        | Invalid Special Characters  |
+        | Insufficient Characters   |
 
     Examples:
       | DocumentNumber   | Cellphone     | Names          | FirstSurname         | SecondSurname         | Email                     | Password   | RepeatPassword |
@@ -689,9 +689,9 @@ Scenario Outline: INW-108 - Quick registration with invalid alphabetic, special 
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid Alphabetic          |
-        | Invalid special characters  |
-        | Too many characters   |
+        | Invalid Alphabetic Characters          |
+        | Invalid Special Characters  |
+        | Too Many Characters   |
 
     Examples:
       | DocumentNumber               | Cellphone     | Names          | FirstSurname         | SecondSurname         | Email                     | Password   | RepeatPassword |
@@ -718,9 +718,9 @@ Scenario Outline: INW-109 - Quick registration with invalid alphabetic, space ch
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid Alphabetic          |
-        | Space characters  |
-        | Insufficient characters   |
+        | Invalid Alphabetic Characters          |
+        | Space Characters  |
+        | Insufficient Characters   |
 
     Examples:
       | DocumentNumber   | Cellphone     | Names         | FirstSurname        | SecondSurname        | Email                     | Password   | RepeatPassword |
@@ -746,9 +746,9 @@ Scenario Outline: INW-110 - Quick registration with invalid alphabetic, space ch
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid Alphabetic          |
-        | Space characters  |
-        | Too many characters   |
+        | Invalid Alphabetic Characters          |
+        | Space Characters  |
+        | Too Many Characters   |
 
     Examples:
       | DocumentNumber             | Cellphone     | Names         | FirstSurname        | SecondSurname        | Email                     | Password   | RepeatPassword |
@@ -775,9 +775,9 @@ Scenario Outline: INW-111 - Quick registration with invalid special characters, 
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid special characters          |
-        | Space characters  |
-        | Insufficient characters   |
+        | Invalid Special Characters          |
+        | Space Characters  |
+        | Insufficient Characters   |
 
     Examples:
       | DocumentNumber      | Cellphone     | Names         | FirstSurname        | SecondSurname        | Email                     | Password   | RepeatPassword |
@@ -804,9 +804,9 @@ Scenario Outline: INW-112 - Quick registration with invalid special characters, 
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid special characters          |
-        | Space characters  |
-        | Too many characters   |
+        | Invalid Special Characters          |
+        | Space Characters  |
+        | Too Many Characters   |
 
     Examples:
     | DocumentNumber                | Cellphone     | Names          | FirstSurname         | SecondSurname         | Email                     | Password   | RepeatPassword |
@@ -833,10 +833,10 @@ Scenario Outline: INW-113 - Quick registration with invalid alphabetic, special 
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid Alphabetic          |
-        | Invalid special characters  |
-        | Space characters            |
-        | Insufficient characters     |
+        | Invalid Alphabetic Characters          |
+        | Invalid Special Characters  |
+        | Space Characters            |
+        | Insufficient Characters     |
 
     Examples:
       | DocumentNumber   | Cellphone     | Names          | FirstSurname         | SecondSurname         | Email                     | Password   | RepeatPassword |
@@ -862,10 +862,10 @@ Scenario Outline: INW-114 - Quick registration with invalid alphabetic, special 
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
     And The field "Document Number" should contain the following error messages
-        | Invalid Alphabetic          |
-        | Invalid special characters  |
-        | Space characters            |
-        | Too many characters         |
+        | Invalid Alphabetic Characters          |
+        | Invalid Special Characters  |
+        | Space Characters            |
+        | Too Many Characters         |
 
     Examples:
       | DocumentNumber                  | Cellphone     | Names          | FirstSurname         | SecondSurname         | Email                     | Password   | RepeatPassword |

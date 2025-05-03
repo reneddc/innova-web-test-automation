@@ -4,41 +4,48 @@ CARD_TITLES = {
 }
 
 DOCUMENT_NUMBER_MESSAGES = {
-  "Empty field" => "El campo número documento es obligatorio.",
-  "Invalid Alphabetic" => 'Formato inválido de "Número de documento". (Invalid Alphabetic)',
-  "Invalid special characters" => 'Formato inválido de "Número de documento". (Invalid special characters)',  
-  "Space characters" => 'Formato inválido de "Número de documento". (Space characters)',
-  "Insufficient characters" => 'El campo número documento debe contener al menos 4 caracteres.',
-  "Too many characters" => 'número documento no debe ser mayor que 15 caracteres.',
-  "Already registered" => 'El número documento ya se encuentra registrado.',
+  "Empty Field" => "El campo número documento es obligatorio.",
+  "Invalid Alphabetic Characters" => 'Formato inválido de "Número de documento". (Caracteres alfabéticos inválidas)',
+  "Invalid Special Characters" => 'Formato inválido de "Número de documento". (Caracteres especiales inválidos)',  
+  "Space Characters" => 'Formato inválido de "Número de documento". (Caracteres de Espacio)',
+  "Insufficient Characters" => 'El campo número documento debe contener al menos 4 caracteres.',
+  "Too Many Characters" => 'número documento no debe ser mayor que 15 caracteres.',
+  "Already Registered" => 'El número documento ya se encuentra registrado.',
 }
 
 NAMES_MESSAGES = {
-  "Empty field" => "nombres es obligatorio.",
+  "Empty Field" => "nombres es obligatorio.",
 }
 
 FIRST_SURNAME_MESSAGES = {
-  "Empty field" => "El campo 'Nombres' es obligatorio.",
+  "Empty Field" => "El campo 'Nombres' es obligatorio.",
 }
 
 SECOND_SURNAME_MESSAGES = {
-  "Empty field" => "",
+  "Empty Field" => "",
 }
 
 CELLPHONE_MESSAGES = {
-  "Empty field" => "celular es obligatorio.",
+  "Empty Field" => "El campo celular es obligatorio.",
+  "Alphabetic Characters" => 'Formato inválido de "Celular". (Caracteres alfabéticos inválidas)',
+  "Invalid Special Characters" => 'Formato inválido de "Celular". (Caracteres especiales inválidos)', 
+  "Space Characters" => 'Formato inválido de "Celular". (Caracteres de Espacio)',
+  "Start with 6 or 7 " => 'El número de celular debe iniciar con 6 o 7',
+  "Insufficient Characters" => 'celular debe tener 8 dígitos',
+  "Too Many Characters" => 'celular debe tener 8 dígitos',
+  "Already Registered" => 'El celular ya se encuentra registrado.',
 }
 
 EMAIL_MESSAGES = {
-  "Empty field" => "El campo 'Correo Electrónico' es obligatorio.",
+  "Empty Field" => "El campo 'Correo Electrónico' es obligatorio.",
 }
 
 PASSWORD_MESSAGES = {
-  "Empty field" => "contraseña es obligatorio.",
+  "Empty Field" => "contraseña es obligatorio.",
 }
 
 REPEAT_PASSWORD_MESSAGES = {
-  "Empty field" => "repetir contraseña es obligatorio.",
+  "Empty Field" => "repetir contraseña es obligatorio.",
 }
 
 

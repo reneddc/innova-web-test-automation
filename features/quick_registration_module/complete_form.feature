@@ -102,7 +102,7 @@ Feature: Validate the Quick Registration using all the form fields
     And The quick registration attempt should fail
     And I accept the failed registration message
     And The user should still on the 'Quick Registration' page
-    And The following fields should display the "Empty field" error message
+    And The following fields should display the "Empty Field" error message
       | Document Number |
       | Names           |
       | First Surname   |

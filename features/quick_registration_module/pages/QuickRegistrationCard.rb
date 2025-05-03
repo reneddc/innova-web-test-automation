@@ -19,7 +19,6 @@ class QuickRegistrationCard
   rescue Watir::Wait::TimeoutError
     false
   end
-  
 
   def get_card_title
     return @card_title.text
