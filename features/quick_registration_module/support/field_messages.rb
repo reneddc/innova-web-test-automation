@@ -15,6 +15,11 @@ DOCUMENT_NUMBER_MESSAGES = {
 
 NAMES_MESSAGES = {
   "Empty Field" => "nombres es obligatorio.",
+  "Numeric Characters" => 'Solo se permite letras y espacios en nombres',
+  "Invalid Special Characters" => 'Solo se permite letras y espacios en nombres',
+  "Invalid Space Characters" => 'Mensaje sin definir (Caracteres de Espacio Invalidos)',
+  "Insufficient Characters" => 'El campo nombres debe contener al menos 2 caracteres.',
+  "Too Many Characters" => 'nombres no debe ser mayor que 50 caracteres.',
 }
 
 FIRST_SURNAME_MESSAGES = {
