@@ -48,6 +48,12 @@ CELLPHONE_MESSAGES = {
 
 EMAIL_MESSAGES = {
   "Empty Field" => "El campo 'Correo Electrónico' es obligatorio.",
+  "Invalid Special Characters" => 'Correo electrónico incorrecto', 
+  "Space Characters" => 'correo electrónico no es un correo válido',
+  "Invalid Email Format" => 'Correo electrónico incorrecto',
+  "Insufficient Characters" => 'celular debe tener 8 dígitos',
+  "Too Many Characters" => 'celular debe tener 8 dígitos',
+  "Already Registered" => 'El correo electrónico ya existe'
 }
 
 PASSWORD_MESSAGES = {
