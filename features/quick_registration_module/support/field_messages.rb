@@ -58,6 +58,10 @@ EMAIL_MESSAGES = {
 
 PASSWORD_MESSAGES = {
   "Empty Field" => "contraseña es obligatorio.",
+  "Invalid Format" => 'La contraseña debe ser minúscula,mayúscula y números',
+  "Space Characters" => 'La contraseña debe ser minúscula,mayúscula y números',
+  "Insufficient Characters" => 'El campo contraseña debe contener al menos 8 caracteres.',
+  "Too Many Characters" => 'contraseña no debe ser mayor que 20 caracteres.'
 }
 
 REPEAT_PASSWORD_MESSAGES = {

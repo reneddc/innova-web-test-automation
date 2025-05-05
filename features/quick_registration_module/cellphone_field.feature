@@ -24,7 +24,7 @@ Feature: Validate the Quick registration focused on "Cellphone" field
     Then The information card should not be displayed
     And The quick registration attempt should fail
     And The user should still on the 'Quick Registration' page
-    And The following fields should display the "Empty field" error message
+    And The following fields should display the "Empty Field" error message
       | Cellphone |
 
     Examples:
