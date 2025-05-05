@@ -24,6 +24,11 @@ NAMES_MESSAGES = {
 
 FIRST_SURNAME_MESSAGES = {
   "Empty Field" => "El campo 'Nombres' es obligatorio.",
+  "Numeric Characters" => 'Solo se permite letras y espacios en primer apellido',
+  "Invalid Special Characters" => 'Solo se permite letras y espacios en primer apellido',
+  "Invalid Space Characters" => 'Mensaje sin definir (Caracteres de Espacio Invalidos)',
+  "Insufficient Characters" => 'El campo primer apellido debe contener al menos 2 caracteres.',
+  "Too Many Characters" => 'primer apellido no debe ser mayor que 50 caracteres.',
 }
 
 SECOND_SURNAME_MESSAGES = {
