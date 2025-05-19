@@ -5,7 +5,7 @@ Feature: Validate the Quick registration focused on "Email" field
     When I press the 'Quick Registration' option
     Then I am redirected to the 'Quick Registration' page
 
-
+@smokeTest
 Scenario Outline: INW-65 - Quick Registration attempt with missing "Email" field
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -33,7 +33,7 @@ Scenario Outline: INW-65 - Quick Registration attempt with missing "Email" field
 
 
 
-
+@smokeTest
 Scenario Outline: INW-66 - Quick registration with an "Email" credential that contains numbers in the username section
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -62,7 +62,7 @@ Scenario Outline: INW-66 - Quick registration with an "Email" credential that co
 
 
 
-
+@smokeTest
 Scenario Outline: INW-67 - Quick registration with an "Email" credential that contains valid special characters in the username section
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -89,7 +89,7 @@ Scenario Outline: INW-67 - Quick registration with an "Email" credential that co
         | 66000199       | 66000199    | NOMBRECXCIX    | PRIAPELLIDOCXCIX     | SEGAPELLIDOCXCIX      | 66000199-test@gmail.com      | Aaaaaaaaa1 | Aaaaaaaaa1     |
 
 
-
+@smokeTest
 Scenario Outline: INW-68 - Quick registration with an "Email" credential that contains invalid special characters in the username section
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -120,7 +120,7 @@ Scenario Outline: INW-68 - Quick registration with an "Email" credential that co
         | 66000204       | 66000204    | NOMBRECCIV    | PRIAPELLIDOCCIV     | SEGAPELLIDOCCIV      | 66000204(t)est@gmail.com      | Aaaaaaaaa1 | Aaaaaaaaa1     |
 
 
-
+@smokeTest
 Scenario Outline: INW-69 - Quick registration with an "Email" credential that contains space characters
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -153,7 +153,7 @@ Scenario Outline: INW-69 - Quick registration with an "Email" credential that co
 
 
 
-
+@smokeTest
 Scenario Outline: INW-70 - Quick registration with an "Email" credential without "@" character
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -184,7 +184,7 @@ Scenario Outline: INW-70 - Quick registration with an "Email" credential without
 
 
 
-
+@smokeTest
 Scenario Outline: INW-71 - Quick registration with an "Email" credential without "." character
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -215,7 +215,7 @@ Scenario Outline: INW-71 - Quick registration with an "Email" credential without
 
 
 
-
+@smokeTest
 Scenario Outline: INW-72 - Quick registration with an "Email" credential that doesn't fit the email format in username section
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -245,7 +245,7 @@ Scenario Outline: INW-72 - Quick registration with an "Email" credential that do
 
 
 
-
+@smokeTest
 Scenario Outline: INW-73 - Quick registration with an "Email" credential with valid organization domains 
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -276,7 +276,7 @@ Scenario Outline: INW-73 - Quick registration with an "Email" credential with va
         | 66000230       | 66000230    | NOMBRECCXXX      | PRIAPELLIDOCCXXX        | SEGAPELLIDOCCXXX          | 66000230test@nuevatel.com       | Aaaaaaaaa1 | Aaaaaaaaa1     |
 
 
-
+@smokeTest
 Scenario Outline: INW-74 - Quick registration with an "Email" credential that doesn't fit the email format in organization domain section
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -462,7 +462,7 @@ Scenario Outline: INW-79 - Quick registration changing invalid "Email" to a vali
         | 66000255       | 66000255    | NOMBRECCLV    | PRIAPELLIDOCCLV    | SEGAPELLIDOCCLV     | t                       | Aaaaaaaaa1    | Aaaaaaaaa1     | 66000255                 | 66000255          | NOMBRECCLV        | PRIAPELLIDOCCLV       | SEGAPELLIDOCCLV       | 66000255test@gmail.com        | Aaaaaaaaa1        | Aaaaaaaaa1     |
         | 66000256       | 66000256    | NOMBRECCLVI   | PRIAPELLIDOCCLVI   | SEGAPELLIDOCCLVI    | 66000256test@correo.com | Aaaaaaaaa1    | Aaaaaaaaa1     | 66000256                 | 66000256          | NOMBRECCLVI       | PRIAPELLIDOCCLVI      | SEGAPELLIDOCCLVI      | 66000256test@gmail.com        | Aaaaaaaaa1        | Aaaaaaaaa1     |
 
-
+@smokeTest
  Scenario Outline: INW-80 - Quick registration entering a previously registered "Email" credential
     Given I am on the 'Quick Registration' page
     And I fill the 'Quick Registration' form with the following values

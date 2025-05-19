@@ -144,5 +144,3 @@ And(/^The field "(.*)" should contain the following error messages$/) do |field,
                                 "Expected field message for #{field} contains: #{expected_message}. But got: '#{current_message}'")                   
     end
 end
-
-

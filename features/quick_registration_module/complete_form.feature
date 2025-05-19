@@ -7,7 +7,7 @@ Feature: Validate the Quick Registration using all the form fields
 
 
    
-  @onlyThis
+  @smokeTest
   Scenario Outline: INW-1 - Quick Registration with valid data in all the fields
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -34,7 +34,7 @@ Feature: Validate the Quick Registration using all the form fields
 
 
 
-  @onlyThis
+  @smokeTest
   Scenario Outline: INW-2 - Quick Registration without checking the terms and conditions
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -59,7 +59,7 @@ Feature: Validate the Quick Registration using all the form fields
 
 
 
-  @onlyThis
+  @smokeTest
   Scenario: INW-3 - Quick Registration with only empty fields
     Given I am on the 'Quick Registration' page
     When I click the 'Register' button
@@ -70,7 +70,7 @@ Feature: Validate the Quick Registration using all the form fields
 
 
 
- @onlyThis
+ @smokeTest
   Scenario: INW-4 - Quick Registration with only empty fields and checking terms of conditions
     Given I am on the 'Quick Registration' page
     When I check the "Terms and Conditions" checkbox
@@ -83,7 +83,7 @@ Feature: Validate the Quick Registration using all the form fields
 
 
 
-  @onlyThis
+  @smokeTest
   Scenario Outline: INW-5 - Quick Registration filling only the optional fields
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -117,7 +117,7 @@ Feature: Validate the Quick Registration using all the form fields
 
 
 
-  @onlyThis 
+  @smokeTest
   Scenario Outline: INW-6 - Quick Registration filling only the mandatory fields
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -140,3 +140,7 @@ Feature: Validate the Quick Registration using all the form fields
     Examples:
     | DocumentNumber | Cellphone     | Names     | FirstSurname    | SecondSurname   | Email                     | Password   | RepeatPassword |
     | 66000006       | 66000006      | NOMBREVI  | PRIAPELLIDOVI   | ""              | 66000006test@gmail.com    | Aaaaaaaaa1 | Aaaaaaaaa1     |   
+
+
+
+    

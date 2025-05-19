@@ -6,7 +6,7 @@ Feature: Validate the Quick registration focused on "Password" field
     Then I am redirected to the 'Quick Registration' page
 
   
-
+@smokeTest
   Scenario Outline: INW-81 - Quick Registration attempt with missing "Password" field
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -32,7 +32,7 @@ Feature: Validate the Quick registration focused on "Password" field
         | 66000259       | 66000259    | NOMBRECCLIX   | PRIAPELLIDOCCLIX   | SEGAPELLIDOCCLIX    | 66000259test@gmail.com        | ""          | Aaaaaaaaa1     |
 
 
-
+@smokeTest
 Scenario Outline: INW-82 - Quick registration with a "Password" that only contains upper lettters
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -58,7 +58,7 @@ Scenario Outline: INW-82 - Quick registration with a "Password" that only contai
         | 66000260       | 66000260    | NOMBRECCLX    | PRIAPELLIDOCCLX    | SEGAPELLIDOCCLX     | 66000260test@gmail.com        | AAAAAAAA   | AAAAAAAA       |
 
 
-
+@smokeTest
 Scenario Outline: INW-83 - Quick registration with a "Password" that only contains lower lettters
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -84,7 +84,7 @@ Scenario Outline: INW-83 - Quick registration with a "Password" that only contai
         | 66000261       | 66000261    | NOMBRECCLXI   | PRIAPELLIDOCCLXI   | SEGAPELLIDOCCLXI    | 66000261test@gmail.com        | aaaaaaaa   | aaaaaaaa       |
 
 
-
+@smokeTest
 Scenario Outline: INW-83 - Quick registration with a "Password" that only contains numbers
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values

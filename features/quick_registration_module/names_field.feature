@@ -6,7 +6,7 @@ Feature: Validate the Quick registration focused on "Names" field
     Then I am redirected to the 'Quick Registration' page
 
   
-
+@smokeTest
   Scenario Outline: INW-32 - Quick Registration attempt with missing "Names" field
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -299,7 +299,7 @@ Scenario Outline: INW-41 - Quick registration changing invalid "Name" to a valid
 
 
 
-
+@smokeTest
  Scenario Outline: INW-42 - Quick registration entering a previously registered "Cellphone" credential
     Given I am on the 'Quick Registration' page
     And I fill the 'Quick Registration' form with the following values

@@ -6,7 +6,7 @@ Feature: Validate the Quick registration focused on "Document Number" field
     Then I am redirected to the 'Quick Registration' page
 
   
-
+  @smokeTest
   Scenario Outline: INW-12 - Quick Registration attempt with missing document number
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -312,7 +312,7 @@ Scenario Outline: INW-21 - Quick registration changing invalid "Document Number"
 
 
 
-
+@smokeTest
 #@onlyThis
 Scenario Outline: INW-22 - Quick registration entering a previously registered "Document Number"
     Given I am on the 'Quick Registration' page
@@ -870,5 +870,4 @@ Scenario Outline: INW-114 - Quick registration with invalid alphabetic, special 
     Examples:
       | DocumentNumber                  | Cellphone     | Names          | FirstSurname         | SecondSurname         | Email                     | Password   | RepeatPassword |
       | "@·/·AA·#·,·*·B·#·C·><·:;·DD"   | 66000339      | NOMCCCXXXIX    | PRIAPCCCXXXIX        | SEGAPCCCXXXIX         | 66000339test@gmail.com    | Aaaaaaaaa1 | Aaaaaaaaa1     |
-
 

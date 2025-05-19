@@ -6,7 +6,7 @@ Feature: Validate the Quick registration focused on "Cellphone" field
     Then I am redirected to the 'Quick Registration' page
 
   
-
+  @smokeTest
   Scenario Outline: INW-23 - Quick Registration attempt with missing cellphone field
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
@@ -255,7 +255,7 @@ Scenario Outline: INW-30 - Quick registration changing invalid "Cellphone" to a 
 
 
 
-
+@smokeTest
  Scenario Outline: INW-31 - Quick registration entering a previously registered "Cellphone" credential
     Given I am on the 'Quick Registration' page
     And I fill the 'Quick Registration' form with the following values
@@ -1518,7 +1518,7 @@ Scenario Outline: INW-154 - Quick registration with a "Cellphone" credential tha
 
 
 
-
+@soloeste
 Scenario Outline: INW-155 - Quick registration with a "Cellphone" credential that contains alphabetic characters, invalid special characters, space characters, a number not starting with 6 or 7, and too many characters
   Given I am on the 'Quick Registration' page
   When I fill the 'Quick Registration' form with the following values

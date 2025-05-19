@@ -6,7 +6,7 @@ Feature: Validate the Quick registration focused on "First Surname" field
     Then I am redirected to the 'Quick Registration' page
 
   
-
+@smokeTest
   Scenario Outline: INW-43 - Quick Registration attempt with missing "First Surname" field
     Given I am on the 'Quick Registration' page
     When I fill the 'Quick Registration' form with the following values
